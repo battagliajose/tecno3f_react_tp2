@@ -1,0 +1,65 @@
+.character-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 16px;
+  width: 200px;
+  text-align: center;
+  background: linear-gradient(to bottom, #4511d3, #ee0a0a);
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.character-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05);
+  border-color: #d9ff00;
+  border-width: 2px;
+}
+
+.character-card-bg {
+  position: absolute;
+  inset: 0;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  opacity: 0.6;
+  filter: blur(5px);
+  transform: rotate(-6deg) scale(1.3);
+
+  z-index: 0;
+}
+
+.character-image {
+  width: 180px;
+  height: 70%;
+  object-fit: scale-down;
+  width: 100%;
+  border-radius: 8px;
+}
+
+.character-info {
+  margin-top: 12px;
+  text-align: left;
+  color: #fff;
+  padding-left: 8px;
+}
+
+.back-overlay {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}

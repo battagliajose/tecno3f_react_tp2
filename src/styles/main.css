@@ -1,6 +1,6 @@
 html {
   font-family: "Mulish", sans-serif;
-  margin-top: 0.7rem;
+  margin-top: 0rem;
   margin-bottom: 0rem;
 }
 
@@ -14,14 +14,45 @@ body {
   flex-direction: column;
   min-height: 100vh;
   align-items: center;
-  gap: 1rem;
+  background: linear-gradient(to bottom, #067427, #bd0e0ebb);
+}
+
+.main-content {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  width: 90%;
+  flex-direction: column;
+  align-items: center;
   padding: 1rem;
 }
 
-main {
+.main-background {
+  position: absolute;
+  inset: -50px;
+  background-image: url("https://www.infobae.com/resizer/v2/YHAUBUYW75FZVLG4Z4WL5S6LMY.jpg?auth=86380fb837f833d1c1bf2826ced5868cd706469b29b1633837dd64f132db55b2&smart=true&width=992&height=661&quality=85");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.6;
+  filter: blur(20px);
+  transform: rotate(-3deg) scale(1.15);
+  z-index: 0;
+}
+
+.main-overlay {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1rem;
+  width: 100%;
   padding: 1rem;
+  background: linear-gradient(
+    to right,
+    rgba(19, 141, 240, 0.55),
+    rgba(167, 99, 99, 0.55)
+  );
+  backdrop-filter: blur(6px);
 }

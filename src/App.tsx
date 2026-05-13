@@ -1,13 +1,17 @@
 import "./styles/reset.css";
 import "./styles/normalize.css";
 import "./styles/main.css";
-import "./styles/App.css";
+import CustomHeader from "./components/CustomHeader";
+import MainContent from "./components/MainContent";
+import CustomFooter from "./components/CustomFooter";
 
 function App() {
   return (
-    <div>
-      <p>Hello, World!</p>
-    </div>
+    <>
+      <CustomHeader />
+      <MainContent />
+      <CustomFooter />
+    </>
   );
 }
 

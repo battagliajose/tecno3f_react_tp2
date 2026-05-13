@@ -1,0 +1,42 @@
+.finder {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  background-color: #3c99f5;
+  padding: 10px;
+  border-radius: 4px;
+  width: fit-content;
+}
+
+.search-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.search-button:hover {
+  background-color: #0056b3;
+}
+
+.finder input {
+  padding: 10px;
+  width: 200px;
+  margin-right: 10px;
+}
+
+.clear-button {
+  color: #dc3545;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  right: 115px;
+}
+
+.clear-button:hover {
+  color: #a71d2a;
+}
