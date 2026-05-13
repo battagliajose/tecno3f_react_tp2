@@ -20,8 +20,17 @@ export default function Finder({ setBusqueda, setPagina }: FinderProps) {
     setPagina(1);
   };
 
+  const handlerTeclado = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      handlerBuscar();
+    }
+    if (e.key === "Escape") {
+      handlerLimpiar();
+    }
+  };
+
   return (
-    <div className="finder">
+    <div className="finder" onKeyDown={handlerTeclado}>
       <input
         type="text"
         placeholder="Busca un personaje..."
