@@ -25,11 +25,14 @@ export default function Pagination({
   return (
     <>
       <div className="pagination">
+        <button className="pagination-button" onClick={() => setPagina(1)}>
+          {"<<"}
+        </button>
         <button
           className="pagination-button"
           onClick={() => setPagina((prev) => Math.max(prev - 1, 1))}
         >
-          Anterior
+          {"<"}
         </button>
         <div className="pagination-numbers">
           {paginas.map((numeroPagina) => (
@@ -46,7 +49,13 @@ export default function Pagination({
           className="pagination-button"
           onClick={() => setPagina((prev) => Math.min(prev + 1, totalPaginas))}
         >
-          Siguiente
+          {">"}
+        </button>
+        <button
+          className="pagination-button"
+          onClick={() => setPagina(totalPaginas)}
+        >
+          {">>"}
         </button>
       </div>
     </>
