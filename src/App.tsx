@@ -1,17 +1,23 @@
-import "./styles/reset.css";
-import "./styles/normalize.css";
-import "./styles/main.css";
-import CustomHeader from "./components/CustomHeader";
-import MainContent from "./components/MainContent";
-import CustomFooter from "./components/CustomFooter";
+import "@styles/reset.css";
+import "@styles/normalize.css";
+import "@styles/main.css";
+import { BrowserRouter, Route, Routes } from "react-router";
+import Home from "./pages/home/Home";
+import Catalogo from "./pages/catalogo/Catalogo";
+import Detalle from "./pages/detalle/Detalle";
+import Contacto from "./pages/contacto/Contacto";
 
 function App() {
   return (
-    <>
-      <CustomHeader />
-      <MainContent />
-      <CustomFooter />
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/catalogo" element={<Catalogo />} />
+        <Route path="/detalle/:id" element={<Detalle />} />
+        <Route path="/contacto" element={<Contacto />} />
+        <Route path="*" element={<h1>Página no encontrada</h1>} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

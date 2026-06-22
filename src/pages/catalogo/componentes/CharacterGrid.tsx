@@ -1,6 +1,6 @@
+import type { Personaje } from "@interfaces/Personaje.Interface";
 import CharacterCard from "./CharacterCard";
-import "../styles/character-grid.css";
-import type { Personaje } from "../types/personaje.Type";
+import "@styles/character-grid.css";
 
 interface CharacterGridProps {
   personajes: Personaje[];

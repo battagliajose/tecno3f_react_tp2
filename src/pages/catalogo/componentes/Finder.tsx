@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "../styles/finder.css";
+import "@styles/finder.css";
 
 interface FinderProps {
   setBusqueda: React.Dispatch<React.SetStateAction<string>>;

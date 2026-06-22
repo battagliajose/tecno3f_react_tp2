@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import { api } from "../API/http";
+import { api } from "../../../API/http";
 import CharacterGrid from "./CharacterGrid";
-import "../styles/main.css";
+import "@styles/main.css";
 import Finder from "./Finder";
 import Pagination from "./Pagination";
-import type { Personaje } from "../types/personaje.Type";
+import type { Personaje } from "@interfaces/Personaje.Interface";
 
 export default function MainContent() {
   const [personajes, setPersonajes] = useState<Personaje[]>([]);
