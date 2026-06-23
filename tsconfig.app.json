@@ -18,7 +18,10 @@
       "@/*": ["./src/*"],
       "@styles/*": ["./src/styles/*"],
       "@interfaces/*": ["./src/interfaces/*"],
-      "@components/*": ["./src/components/*"]
+      "@components/*": ["./src/components/*"],
+      "@hooks/*": ["./src/hooks/*"],
+      "@pages/*": ["./src/pages/*"],
+      "@API/*": ["./src/API/*"]
     },
 
     "noUnusedLocals": true,
