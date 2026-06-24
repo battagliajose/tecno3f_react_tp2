@@ -21,7 +21,8 @@
       "@components/*": ["./src/components/*"],
       "@hooks/*": ["./src/hooks/*"],
       "@pages/*": ["./src/pages/*"],
-      "@API/*": ["./src/API/*"]
+      "@API/*": ["./src/API/*"],
+      "@assets/*": ["./src/assets/*"]
     },
 
     "noUnusedLocals": true,
