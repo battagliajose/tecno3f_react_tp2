@@ -1,6 +1,7 @@
 .custom-navbar {
   overflow: hidden;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 60px;
@@ -11,8 +12,20 @@
   width: 90%;
 }
 
+.custom-navbar-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
 .custom-navbar-link {
   color: #fff;
   text-decoration: none;
   padding: 0 15px;
+}
+
+.custom-navbar-favorites {
+  color: #c09595;
 }
