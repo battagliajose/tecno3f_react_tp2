@@ -2,7 +2,7 @@ import type { Personaje } from "@/interfaces/Personaje.Interface";
 import { createContext } from "react";
 
 interface FavoriteContextType {
-  favorites: number[];
+  favorites: Personaje[];
   toggleFavorite: (personaje: Personaje) => void;
   isFavorite: (id: number) => boolean;
 }

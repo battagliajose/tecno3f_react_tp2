@@ -7,18 +7,24 @@ interface FavoriteProviderProps {
 }
 
 export default function FavoriteProvider({ children }: FavoriteProviderProps) {
-  const [favorites, setFavorites] = useState<number[]>([]);
+  const [favorites, setFavorites] = useState<Personaje[]>([]);
 
   const toggleFavorite = (personaje: Personaje) => {
-    if (favorites.includes(personaje.id)) {
-      setFavorites(favorites.filter((id) => id !== personaje.id));
-    } else {
-      setFavorites([...favorites, personaje.id]);
-    }
+    setFavorites((prevFavorites) => {
+      const yaEsFavorito = prevFavorites.some(
+        (favorito) => favorito.id === personaje.id,
+      );
+
+      if (yaEsFavorito) {
+        return prevFavorites.filter((favorito) => favorito.id !== personaje.id);
+      }
+
+      return [...prevFavorites, personaje];
+    });
   };
 
   const isFavorite = (id: number) => {
-    return favorites.includes(id);
+    return favorites.some((personaje) => personaje.id === id);
   };
 
   return (

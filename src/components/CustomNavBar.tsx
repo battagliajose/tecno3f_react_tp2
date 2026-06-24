@@ -15,6 +15,9 @@ export default function CustomNavBar() {
         <Link className="custom-navbar-link" to="/catalogo">
           Catálogo
         </Link>
+        <Link className="custom-navbar-link" to="/favoritos">
+          Favoritos
+        </Link>
         <Link className="custom-navbar-link" to="/contacto">
           Contacto
         </Link>
