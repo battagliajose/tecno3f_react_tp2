@@ -30,7 +30,7 @@ export default function Contacto() {
           <label htmlFor="nombre">Nombre:</label>
           <input
             id="nombre"
-            {...register("nombre", { required: "El nombre es obligatorio" })}
+            {...register("nombre", { required: "Ingresa tu nombre" })}
           />
           {errors.nombre && (
             <span className="spanError">{errors.nombre.message}</span>
@@ -41,7 +41,7 @@ export default function Contacto() {
           <input
             id="email"
             type="email"
-            {...register("email", { required: "El email es obligatorio" })}
+            {...register("email", { required: "Ingresa tu email" })}
           />
           {errors.email && (
             <span className="spanError">{errors.email.message}</span>
@@ -51,7 +51,7 @@ export default function Contacto() {
           <label htmlFor="mensaje">Mensaje:</label>
           <textarea
             id="mensaje"
-            {...register("mensaje", { required: "El mensaje es obligatorio" })}
+            {...register("mensaje", { required: "Ingresa tu mensaje" })}
           />
           {errors.mensaje && (
             <span className="spanError">{errors.mensaje.message}</span>

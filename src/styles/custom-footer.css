@@ -5,3 +5,8 @@
   text-align: center;
   width: 90%;
 }
+
+.custom-footer a {
+  color: #61dafb;
+  text-decoration: none;
+}

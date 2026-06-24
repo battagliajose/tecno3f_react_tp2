@@ -1,5 +1,5 @@
-import { api } from "@/API/http";
-import type { Personaje } from "@/interfaces/Personaje.Interface";
+import { api } from "@API/http";
+import type { Personaje } from "@interfaces/Personaje.Interface";
 import { useEffect, useState } from "react";
 
 export default function usePersonajes() {
@@ -10,7 +10,6 @@ export default function usePersonajes() {
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
 
-  // ver useCallback para sacar funcion fuera de useEffect
   useEffect(() => {
     const obtenerPersonajes = async (): Promise<void> => {
       setLoading(true);

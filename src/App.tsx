@@ -13,7 +13,6 @@ import NotFound from "./pages/notFound/notFound";
 
 function App() {
   return (
-    /*Agregar Layout con Header, Navbar y Footer*/
     <BrowserRouter>
       <FavoriteProvider>
         <Routes>

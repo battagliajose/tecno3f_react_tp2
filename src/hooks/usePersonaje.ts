@@ -1,5 +1,5 @@
-import { api } from "@/API/http";
-import type { Personaje } from "@/interfaces/Personaje.Interface";
+import { api } from "@API/http";
+import type { Personaje } from "@interfaces/Personaje.Interface";
 import { useEffect, useState } from "react";
 
 export default function usePersonaje() {

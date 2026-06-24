@@ -1,4 +1,4 @@
-import "../styles/custom-footer.css";
+import "@styles/custom-footer.css";
 
 export default function CustomFooter() {
   return (
