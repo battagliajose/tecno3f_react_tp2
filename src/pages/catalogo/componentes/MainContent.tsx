@@ -1,59 +1,12 @@
-import CharacterGrid from "./CharacterGrid";
-import "@styles/main.css";
-import Finder from "./Finder";
-import Pagination from "./Pagination";
-import usePersonajes from "@hooks/usePersonajes";
-
-export default function MainContent() {
-  const {
-    personajes,
-    pagina,
-    totalPaginas,
-    setPagina,
-    setBusqueda,
-    loading,
-    error,
-  } = usePersonajes();
-
-  if (loading) {
-    return (
-      <main className="main-content">
-        <div className="main-background" />
-        <div className="main-overlay">
-          <h2>Cargando...</h2>
-        </div>
-      </main>
-    );
-  }
-
-  if (error) {
-    return (
-      <main className="main-content">
-        <div className="main-background" />
-        <div className="main-overlay">
-          <h2>Error al cargar los personajes</h2>
-        </div>
-      </main>
-    );
-  }
-
+export default function MainContent({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <main className="main-content">
       <div className="main-background" />
-      <div className="main-overlay">
-        <Pagination
-          pagina={pagina}
-          totalPaginas={totalPaginas}
-          setPagina={setPagina}
-        />
-        <Finder setBusqueda={setBusqueda} setPagina={setPagina} />
-        <CharacterGrid personajes={personajes} />
-        <Pagination
-          pagina={pagina}
-          totalPaginas={totalPaginas}
-          setPagina={setPagina}
-        />
-      </div>
+      <div className="main-overlay">{children}</div>
     </main>
   );
 }
