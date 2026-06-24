@@ -8,17 +8,21 @@ import { useContext } from "react";
 
 interface CharacterCardProps {
   character: Personaje;
+  detalle?: boolean;
 }
 
-export default function CharacterCard({ character }: CharacterCardProps) {
+export default function CharacterCard({
+  character,
+  detalle,
+}: CharacterCardProps) {
   const { isFavorite, toggleFavorite } = useContext(favoriteContext);
   const navigate = useNavigate();
   const imagenUrl = `https://rickandmortyapi.com/api/character/avatar/${character.id}.jpeg`;
 
   return (
     <div
-      className="character-card"
-      onClick={() => navigate(`/detalle/${character.id}`)}
+      className={detalle ? "character-card detalle" : "character-card"}
+      onClick={detalle ? undefined : () => navigate(`/detalle/${character.id}`)}
     >
       <div
         className="character-card-bg"
@@ -50,6 +54,19 @@ export default function CharacterCard({ character }: CharacterCardProps) {
           <h3>
             <b>Especie:</b> {character.species}
           </h3>
+          {detalle && (
+            <>
+              <h3>
+                <b>Género:</b> {character.gender}
+              </h3>
+              <h3>
+                <b>Origen:</b> {character.origin.name}
+              </h3>
+              <h3>
+                <b>Ubicación:</b> {character.location.name}
+              </h3>
+            </>
+          )}
         </div>
       </div>
     </div>

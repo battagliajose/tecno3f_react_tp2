@@ -15,7 +15,7 @@ export default function Detalle() {
     }
   }, [id, setId]);
 
-  if (loading) {
+  if (loading || personaje?.id !== Number(id)) {
     return <p>Cargando...</p>;
   }
 
@@ -28,7 +28,11 @@ export default function Detalle() {
       <h1>Detalle del personaje</h1>
       {personaje && (
         <>
-          <CharacterCard key={personaje.id} character={personaje} />{" "}
+          <CharacterCard
+            key={personaje.id}
+            character={personaje}
+            detalle={true}
+          />{" "}
         </>
       )}
       <button onClick={() => navigate(-1)}>Volver</button>
