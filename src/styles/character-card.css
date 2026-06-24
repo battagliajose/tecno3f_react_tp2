@@ -64,3 +64,21 @@
   align-items: center;
   border-radius: 5px;
 }
+
+.heart-icon {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.heart-icon:hover {
+  transform: scale(1.25);
+}
+
+.item-card:hover {
+  transform: scale(1.05);
+}
