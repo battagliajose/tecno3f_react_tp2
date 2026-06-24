@@ -1,13 +1,14 @@
-import CustomFooter from "@components/CustomFooter";
-import CustomHeader from "@components/CustomHeader";
 import MainContent from "./componentes/MainContent";
+import { useContext } from "react";
+import { favoriteContext } from "@/context/favoriteContext";
 
-export default function Home() {
+export default function Catalogo() {
+  const { favorites } = useContext(favoriteContext);
+
   return (
     <>
-      <CustomHeader />
+      <h1>Favoritos: {favorites.length}</h1>
       <MainContent />
-      <CustomFooter />
     </>
   );
 }
