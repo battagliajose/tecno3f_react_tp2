@@ -5,8 +5,37 @@ import Pagination from "./Pagination";
 import usePersonajes from "@hooks/usePersonajes";
 
 export default function MainContent() {
-  const { personajes, pagina, totalPaginas, setPagina, setBusqueda } =
-    usePersonajes();
+  const {
+    personajes,
+    pagina,
+    totalPaginas,
+    setPagina,
+    setBusqueda,
+    loading,
+    error,
+  } = usePersonajes();
+
+  if (loading) {
+    return (
+      <main className="main-content">
+        <div className="main-background" />
+        <div className="main-overlay">
+          <h2>Cargando...</h2>
+        </div>
+      </main>
+    );
+  }
+
+  if (error) {
+    return (
+      <main className="main-content">
+        <div className="main-background" />
+        <div className="main-overlay">
+          <h2>Error al cargar los personajes</h2>
+        </div>
+      </main>
+    );
+  }
 
   return (
     <main className="main-content">
