@@ -1,8 +1,7 @@
-import { api } from "@/API/http";
-import type { Personaje } from "@/interfaces/Personaje.Interface";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useNavigate, useParams } from "react-router";
 import CharacterCard from "../catalogo/componentes/CharacterCard";
+import usePersonaje from "@/hooks/usePersonaje";
 
 /*
 En el detalle reutilizás CharacterCard, que al hacer clic intenta navegar otra vez a /detalle/:id. 
@@ -13,15 +12,17 @@ export default function Detalle() {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  const [personaje, setPersonaje] = useState<Personaje | null>(null);
+  const { personaje, setId } = usePersonaje();
 
   useEffect(() => {
-    const obtenerPersonaje = async (): Promise<void> => {
-      const response = await api.get(`/character/${id}`);
-      setPersonaje(response.data);
-    };
-    obtenerPersonaje();
-  }, [id]);
+    if (id) {
+      setId(parseInt(id));
+    }
+  }, [id, setId]);
+
+  if (!personaje) {
+    return <p>Cargando...</p>;
+  }
 
   return (
     <>
@@ -29,7 +30,6 @@ export default function Detalle() {
       {personaje && (
         <>
           <CharacterCard key={personaje.id} character={personaje} />{" "}
-          <p>{personaje.episode.join(", ")}</p>
         </>
       )}
       <button onClick={() => navigate(-1)}>Volver</button>
